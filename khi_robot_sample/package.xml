@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>khi_robot_sample</name>
+  <version>1.0.0</version>
+  <description>Sample application package for khi_robot</description>
+
+  <author email="nakamichi_d@khi.co.jp">nakamichi_d</author>
+  <maintainer email="nakamichi_d@khi.co.jp">nakamichi_d</maintainer>
+
+  <license>BSD</license>
+
+  <url type="repository">https://github.com/Kawasaki-Robotics/khi_robot_app</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>khi_duaro_moveit_config</exec_depend>
+  <exec_depend>khi_rs007l_moveit_config</exec_depend>
+  <exec_depend>khi_rs007n_moveit_config</exec_depend>
+  <exec_depend>khi_rs080n_moveit_config</exec_depend>
+  <exec_depend>moveit_commander</exec_depend>
+</package>
