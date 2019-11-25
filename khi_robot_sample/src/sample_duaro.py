@@ -314,7 +314,7 @@ def sample_motion(lower_arm, upper_arm, botharms):
     show_text("Sample duAro: botharms\nb_jt1")
     botharms.go()
 
-    show_text("")
+    show_text("done")
 
 if __name__ == '__main__':
     rospy.init_node('sample_duaro')
