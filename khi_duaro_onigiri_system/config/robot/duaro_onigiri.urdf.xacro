@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<robot name="khi_duaro" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find khi_duaro_onigiri_system)/config/robot/duaro_onigiri_macro.xacro"/>
+
+  <!-- instantiate duaro -->
+  <xacro:khi_duaro prefix="" />
+
+  <!-- Fix duaro to world -->
+
+  <link name="world"/>
+
+  <joint name="world2base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <!-- Fix box to base_link -->
+  <link name="duaro_body">
+    <visual>
+      <geometry>
+        <mesh filename="package://khi_duaro_onigiri_system/config/meshes/WD002N_F5F1_Cabinet_body.stl"/>
+      </geometry>
+      <material name="White"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://khi_duaro_onigiri_system/config/meshes/WD002N_F5F1_Cabinet_body.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <xacro:default_inertial mass="100"/>
+  </link>
+  <joint name="duaro_body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="duaro_body"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+
+  <!-- Fix lower tool to lower_link_j4 -->
+  <link name="lower_tool">
+  <visual>
+    <geometry>
+      <mesh filename="package://khi_duaro_onigiri_system/config/meshes/lower_tool.stl"/>
+    </geometry>
+    <material name="White"/>
+    <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="0 0 0"/>
+  </visual>
+  <collision>
+    <geometry>
+      <mesh filename="package://khi_duaro_onigiri_system/config/meshes/lower_tool.stl"/>
+    </geometry>
+    <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="0 0 0"/>
+  </collision>
+</link>
+
+<joint name="lower_tool_joint" type="fixed">
+  <parent link="lower_link_j4"/>
+  <child link="lower_tool"/>
+  <origin xyz="0 0 -0.029" rpy="0 0 0" />
+</joint>
+
+  <!-- Fix upper tool to upper_link_j4 -->
+ <link name="upper_tool">
+  <visual>
+    <geometry>
+      <mesh filename="package://khi_duaro_onigiri_system/config/meshes/upper_tool.stl"/>
+    </geometry>
+    <material name="White"/>
+    <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="0 0 0"/>
+  </visual>
+  <collision>
+    <geometry>
+      <mesh filename="package://khi_duaro_onigiri_system/config/meshes/upper_tool.stl"/>
+    </geometry>
+    <origin rpy="0 ${radians(90)} ${radians(90)}" xyz="0 0 0"/>
+  </collision>
+</link>
+
+<joint name="upper_tool_joint" type="fixed">
+  <parent link="upper_link_j4"/>
+  <child link="upper_tool"/>
+  <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+
+</robot>
