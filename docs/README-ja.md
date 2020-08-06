@@ -9,6 +9,12 @@ MoveIt!を使った```khi_robot```のサンプルアプリケーション
 duAro:
 ```roslaunch khi_robot_sample sample_duaro.launch```
 
+## khi_duaro_onigiri_system
+
+おにぎりの番重詰めを自動化したロボットシステムです。
+
+MoveIt!を使用し**duAro**を制御します。
+
 ## ノート
 
 ### このソフトウェアについて

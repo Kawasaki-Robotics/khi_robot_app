@@ -9,6 +9,12 @@ Sample application for ```khi_robot``` using MoveIt!
 duAro:
 ```roslaunch khi_robot_sample sample_duaro.launch```
 
+## khi_duaro_onigiri_system
+
+This is a robot system that automates packing rice balls.
+
+Control **duAro** using MoveIt!.
+
 ## Notes
 
 ### About this software
