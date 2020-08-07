@@ -1,0 +1,21 @@
+<launch>
+
+  <!-- By default, we are not in debug mode -->
+  <arg name="debug" default="false" />
+  <arg name="simulation" default="false" />
+  <arg name="keyboard_input" default="false" />
+  <arg name="onigiri_num" default="50" />
+  <arg name="cycle_num" default="10000" />
+
+  <arg unless="$(arg simulation)" name="operation_mode" value="-r" />
+  <arg     if="$(arg simulation)" name="operation_mode" value="-s" />
+
+  <arg unless="$(arg keyboard_input)" name="default_param" value="-d" />
+  <arg     if="$(arg keyboard_input)" name="default_param" value="-" />
+
+
+  <!-- Run python script -->>
+  <node pkg="khi_duaro_onigiri_system" name="onigiri_system"
+   type="main.py"   args="$(arg operation_mode) $(arg default_param) $(arg onigiri_num) $(arg cycle_num)" output="screen">
+  </node>
+</launch>
